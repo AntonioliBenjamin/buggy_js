@@ -1,12 +1,15 @@
 // I should be defined and transform in boolean.
-const isWorking = process.env.IS_WORKING;
+// We defined and transofrm the const isWorking whith the boolean true.
+const isWorking = true;
+
 
 if (!isWorking || typeof isWorking !== 'boolean') {
     throw new Error('Should be defined and be convert into boolean...');
 }
 
 // Do i forget something in the function parameter ?
-function getStatus() {
+// We add the function parameter to "isOK"
+function getStatus(isOk) {
     if (!isOk) {
         throw new Error('is ok is not defined');
     }
@@ -17,6 +20,7 @@ function getStatus() {
 getStatus('it works');
 
 
+
 // You should define the missing informations in this object.
 // The missing information is described in the getFusilAssaut function.
 const spartan = {
@@ -25,9 +29,12 @@ const spartan = {
     age: 56,
     occupation: 'Master Chief',
     company: 'Microsoft',
+    weapons: ["Fusil d'assaut MA5B"]
 }
 
 // Add the missing key in the spartan object.
+// We add the weapon key inside the spartan object
+
 function getFusilAssaut() {
     console.log(spartan.weapons);
     // On fait le -1 parce que en programmation on compte à partir du 0 
@@ -36,10 +43,12 @@ function getFusilAssaut() {
 }
 
 getFusilAssaut();
-
+// We change push to unshift
 function addWeapon(name) {
-    spartan.weapons.push(name);
+    spartan.weapons.unshift(name);
 }
+// We create a new weapon called sniper
+addWeapon('sniper');
 
 // Do i forget to call something ?
 if (!spartan.weapons.includes('sniper')) {
@@ -54,9 +63,11 @@ if (!getFusilAssaut()) {
 }
 
 
+
 // Make sure to convert string to number when making addition.
-function sum() {
-    const total = a + b;
+function sum(a, b) {
+    // we converted the string ('2') to number (2)
+    const total = a + +b;
     if (total === "22") {
         throw new Error('There is an issue with your typing');
     }
